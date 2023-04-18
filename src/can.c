@@ -147,17 +147,17 @@ bool can_set_bittiming(can_data_t *hcan, uint16_t brp, uint8_t phase_seg1, uint8
 #if defined(STM32G0)
 void FDCAN_Config(void)
 {
-	FDCAN_FilterTypeDef sFilterConfig;
+	// FDCAN_FilterTypeDef sFilterConfig;
 
-	sFilterConfig.IdType = FDCAN_STANDARD_ID;
-	sFilterConfig.FilterIndex = 0;
-	sFilterConfig.FilterType = FDCAN_FILTER_MASK;
-	sFilterConfig.FilterConfig = FDCAN_FILTER_TO_RXFIFO0;
-	sFilterConfig.FilterID1 = 0;
-	sFilterConfig.FilterID2 = 0;
-	HAL_FDCAN_ConfigFilter(&hfdcan2, &sFilterConfig);
+	// sFilterConfig.IdType = FDCAN_STANDARD_ID;
+	// sFilterConfig.FilterIndex = 0;
+	// sFilterConfig.FilterType = FDCAN_FILTER_MASK;
+	// sFilterConfig.FilterConfig = FDCAN_FILTER_TO_RXFIFO0;
+	// sFilterConfig.FilterID1 = 0;
+	// sFilterConfig.FilterID2 = 0;
+	// HAL_FDCAN_ConfigFilter(&hfdcan2, &sFilterConfig);
 
-	HAL_FDCAN_ConfigGlobalFilter(&hfdcan2, FDCAN_REJECT, FDCAN_REJECT, FDCAN_FILTER_REMOTE, FDCAN_FILTER_REMOTE);
+	// HAL_FDCAN_ConfigGlobalFilter(&hfdcan2, FDCAN_REJECT, FDCAN_REJECT, FDCAN_FILTER_REMOTE, FDCAN_FILTER_REMOTE);
 
 	HAL_FDCAN_Start(&hfdcan2);
 }
